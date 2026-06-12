@@ -65,10 +65,7 @@ const Dashboard = () => {
           <BarChartWidget data={revenueData} title="Monthly Revenue" />
       </div>
       <div className="grid grid-cols-1 gap-4">
-        <FilterBar
-            selected={selectedFilter}
-            onChange={setSelectedFilter}
-          />
+        
         {/* <DataTable data={tableData} title="Project Overview" /> */}
          <FilterBar
             selected={selectedFilter}

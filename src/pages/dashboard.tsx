@@ -51,15 +51,19 @@ const Dashboard = () => {
    tableData
     : tableData.filter(row => row.status === selectedFilter);
    return (
-    <div className="min-h-screen bg-gray-950 p-6">
-      <h1 className="text-2xl font-bold text-white mb-6">
-        Analytics Dashboard
-      </h1>
+    <div className="min-h-screen bg-gray-950">
+  <div className="border-b border-gray-800 px-6 py-4 mb-6 flex items-center justify-between">
+    <h1 className="text-xl font-bold text-white">Analytics Dashboard</h1>
+    <span className="text-sm text-gray-400">Palwasha Sheikh</span>
+  </div>
+  <div className="px-6">
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {metrics.map((metric, index) => (
           <SummaryCard key={index} metric={metric} />
         ))}
       </div>
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
         <LineChartWidget data={userGrowthData} title="User Growth" />
           <BarChartWidget data={revenueData} title="Monthly Revenue" />
@@ -67,13 +71,24 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 gap-4">
         
         {/* <DataTable data={tableData} title="Project Overview" /> */}
-         <FilterBar
+         {/* <FilterBar
             selected={selectedFilter}
             onChange={setSelectedFilter}
           />
-                  <DataTable data={filteredData} title="" />
+                  <DataTable data={filteredData} title="" /> */}
 
+<div className="grid grid-cols-1 gap-4 pb-6">
+  <div className="bg-gray-900 rounded-xl p-5 border border-gray-800">
+    <h3 className="text-white font-semibold mb-4">Project Overview</h3>
+    <FilterBar
+      selected={selectedFilter}
+      onChange={setSelectedFilter}
+    />
+    <DataTable data={filteredData} title="" />
+  </div>
+</div>
       </div>
+    </div>
     </div>
   );
 };

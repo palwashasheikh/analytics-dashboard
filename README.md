@@ -3,7 +3,7 @@
 A dark-themed analytics dashboard built with React, TypeScript, and Recharts.
 
 ## Live Demo
-Add Vercel link here after deployment
+https://analytics-dashboard-ten-iota.vercel.app/
 
 ## Tech Stack
 - React + TypeScript
